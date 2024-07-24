@@ -16,6 +16,7 @@ const NutritionDisplay = () => {
             carbs={item.carb}
             fat={item.fat}
             title={item.title}
+            quantity={item.quantity}
           />
         );
       })}

@@ -21,16 +21,29 @@ const NutritionForm = () => {
     <form onSubmit={generateFormData} ref={formRef}>
       <h1 className="primary_heading">Sandesh Nutrition Meter</h1>
       <div className="input_container">
-        <input type="text" placeholder="Item Name" name="title" />
-        <input type="number" placeholder="Calorie" name="calorie" />
+        <input type="text" placeholder="Item Name" name="title" required />
+        <input type="number" placeholder="Calorie" name="calorie" required />
         <input
           type="number"
           step="0.1"
           placeholder="Protein (g)"
           name="protein"
+          required
         />
-        <input type="number" step="0.1" placeholder="Carbs (g)" name="carb" />
-        <input type="number" step="0.1" placeholder="Fat (g)" name="fat" />
+        <input
+          type="number"
+          step="0.1"
+          placeholder="Carbs (g)"
+          name="carb"
+          required
+        />
+        <input
+          type="number"
+          step="0.1"
+          placeholder="Fat (g)"
+          name="fat"
+          required
+        />
       </div>
       <div className="actions">
         <button className="primary_button green_bg" type="submit">
