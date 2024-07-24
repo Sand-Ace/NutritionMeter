@@ -18,21 +18,30 @@ const NutritionStat = () => {
   const totalFat = findTotal(items, "fat");
 
   return (
-    <div className="total_stat">
-      <h2 className="secondary_heading stat-heading">Total</h2>
-      <p>
-        Calories: <strong>{totalCalorie}g</strong>
-      </p>
-      <p>
-        Protein: <strong>{totalProtein}g</strong>
-      </p>
-      <p>
-        Carbs: <strong>{totalCarb}g</strong>
-      </p>
-      <p>
-        Fat: <strong>{totalFat}g</strong>
-      </p>
-    </div>
+    <>
+      {items.length > 0 && (
+        <div className="total_stat">
+          <h2 className="secondary_heading stat-heading">Total</h2>
+          <p>
+            Calories: <strong>{totalCalorie}g</strong>
+          </p>
+          <p>
+            Protein: <strong>{totalProtein}g</strong>
+          </p>
+          <p>
+            Carbs: <strong>{totalCarb}g</strong>
+          </p>
+          <p>
+            Fat: <strong>{totalFat}g</strong>
+          </p>
+        </div>
+      )}
+      {items.length === 0 && (
+        <p className="fallback_text">
+          Please fill the form to calculate the nutrition data.
+        </p>
+      )}
+    </>
   );
 };
 

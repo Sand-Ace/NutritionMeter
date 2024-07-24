@@ -19,7 +19,10 @@ const NutritionForm = () => {
 
   return (
     <form onSubmit={generateFormData} ref={formRef}>
-      <h1 className="primary_heading">Sandesh Nutrition Meter</h1>
+      <h1 className="primary_heading">
+        <ion-icon className="man_logo" name="accessibility-outline"></ion-icon>
+        Sandesh Nutrition Meter
+      </h1>
       <div className="input_container">
         <input type="text" placeholder="Item Name" name="title" required />
         <input type="number" placeholder="Calorie" name="calorie" required />

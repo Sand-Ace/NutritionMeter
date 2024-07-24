@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 
 const CartContext = createContext({
   items: [],
@@ -102,7 +102,6 @@ export function CartContextProvider({ children }) {
   const [Cart, dispatchCartAction] = useReducer(cartReducerFunction, {
     items: [],
   });
-  console.log(Cart);
 
   function addItem(item) {
     dispatchCartAction({ type: "ADD", item: item });

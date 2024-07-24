@@ -26,6 +26,33 @@ body {
 
 }
 
+.primary_heading ion-icon {
+  color: var(--clr--red);
+  margin-right: 0.4rem;
+  animation: logo 7s linear infinite;
+}
+
+@keyframes logo {
+  0% {
+    transform: rotateX(0);
+  }
+
+  28.57% {
+    transform: rotateY(0);
+    /* Animation progress at 2s / 7s */
+  }
+
+  42.85% {
+    transform: rotateY(360deg);
+    /* Animation progress at 4s / 7s */
+  }
+
+  100% {
+    transform: rotateY(360deg);
+    /* End of the animation cycle */
+  }
+}
+
 .container {
   max-width: 64rem;
   background-color: #ffffff;
@@ -48,6 +75,7 @@ body {
   border: 2px solid var(--clr-border);
   padding-left: 1rem;
   border-radius: 0.4rem;
+  font-size: 1rem;
 }
 
 .input_container input:focus {
@@ -122,8 +150,11 @@ body {
   flex-direction: column;
   gap: 1rem;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.100);
+  position: relative;
   transition: all 0.3s linear;
+  animation: slideIn 0.3s linear forwards;
 }
+
 
 
 
@@ -131,7 +162,11 @@ body {
   list-style: none;
   color: #6c757d;
   font-size: 1.2rem;
+
+
 }
+
+
 
 .maximum_quanity {
   color: #ff6666
@@ -176,6 +211,8 @@ body {
 .total_stat {
   text-align: center;
   margin-top: 1.2rem;
+  animation: slideUp 0.6s linear forwards;
+  position: relative;
 }
 
 .stat-heading {
@@ -184,9 +221,70 @@ body {
 
 .total_stat p {
   font-size: 1.2rem;
+  transition: all 0.3 linear;
 }
 
 .division-line {
   height: 1px;
   background-color: var(--clr-border);
+}
+
+.fallback_text {
+  text-align: center;
+  color: var(--clr--heading);
+}
+
+
+
+.modal {
+  background-color: var(--clr--bg);
+  border-radius: 0.8rem;
+  border: none;
+  margin: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 80%;
+  max-width: 40rem;
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+.modal p {
+  font-size: 1.2rem;
+}
+
+.modalbtn {
+  width: 100%;
+  height: 4rem;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
